@@ -5,10 +5,10 @@ import ImageClassification from './components';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <section className="App-wrapper">
         <img src={logo} className="App-logo" alt="logo" />
         <ImageClassification />
-      </header>
+      </section>
     </div>
   );
 }
