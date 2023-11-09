@@ -10,25 +10,25 @@ const ImageClassification = () => {
     const [isLoading, setIsLoading] = useState(false)
 
     const classifyImage = async () => {
-        setIsLoading(true);
-        const model = await mobilenet.load();
+        setIsLoading(true)
+        const model = await mobilenet.load()
 
         if (image) {
-            const imgElement = document.createElement("img"); // Create an image element
-            imgElement.src = image; // Set the source of the image element to the URL
-            await imgElement.decode(); // Wait for the image to load
+            const imgElement = document.createElement("img") // Create an image element
+            imgElement.src = image // Set the source of the image element to the URL
+            await imgElement.decode() // Wait for the image to load
 
-            const imgTensor = tf.browser.fromPixels(imgElement); // Convert pixel from HTML to data tensor
-            const predictions = await model.classify(imgTensor);
-            setPredictions(predictions);
-            setIsLoading(false);
+            const imgTensor = tf.browser.fromPixels(imgElement) // Convert pixel from HTML to data tensor
+            const predictions = await model.classify(imgTensor)
+            setPredictions(predictions)
+            setIsLoading(false)
         }
 
     }
 
     const handleImageUpload = (e) => {
-        const file = e.target?.files[0];
-        setImage(URL.createObjectURL(file));
+        const file = e.target?.files[0]
+        setImage(URL.createObjectURL(file))
     }
 
     return (
@@ -68,7 +68,7 @@ const ImageClassification = () => {
 
             <p className="note">NOTE: More accurate results can be trained with complex machine learning model concepts</p>
         </section>
-    );
+    )
 }
 
 export default ImageClassification;
