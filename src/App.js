@@ -10,7 +10,7 @@ function App() {
         <ImageClassification />
       </section>
     </div>
-  );
+  )
 }
 
 export default App;
